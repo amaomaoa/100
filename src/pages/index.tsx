@@ -1,10 +1,6 @@
 import { Link } from "react-router-dom";
 import routes from "~react-pages";
-
-interface Path {
-    name: string;
-    path: string;
-}
+import { Path } from "./types";
 
 const pagesName: Path[] = [
     {
@@ -18,13 +14,9 @@ const Component = () => (
         {pagesName.map((p) => {
             if (p.path != "/") {
                 return (
-                    <>
-                        <div className="page">
-                            <Link to={p.path + ""}>
-                                {p.path + ":" + p.name}
-                            </Link>
-                        </div>
-                    </>
+                    <div className="page">
+                        <Link to={p.path + ""}>{p.path + ":" + p.name}</Link>
+                    </div>
                 );
             }
         })}
