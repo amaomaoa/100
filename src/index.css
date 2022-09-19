@@ -13,6 +13,11 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
+
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
 }
 
 a {
@@ -30,6 +35,8 @@ body {
     place-items: center;
     min-width: 320px;
     min-height: 100vh;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
