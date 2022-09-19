@@ -4,11 +4,11 @@ canvas {
 
 .pages {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    max-height: 600px;
+    max-width: 600px;
 }
 
 .page {
-    margin: 100px;
+    margin: 15px 20px 0px 0px;
 }
