@@ -1,20 +1,14 @@
 import { Link } from "react-router-dom";
 import routes from "~react-pages";
-import { Path } from "./types";
+import pagesName from "../pageName";
+import "./index.css";
 
-const pagesName: Path[] = [
-    {
-        name: "square",
-        path: "001",
-    },
-];
-
-const Component = () => (
+const Component = (): JSX.Element => (
     <div className="pages">
-        {pagesName.map((p) => {
+        {pagesName.map((p, i) => {
             if (p.path != "/") {
                 return (
-                    <div className="page">
+                    <div key={i} className="page">
                         <Link to={p.path + ""}>{p.path + ":" + p.name}</Link>
                     </div>
                 );

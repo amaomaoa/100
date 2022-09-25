@@ -1,12 +1,24 @@
-import { Suspense } from "react";
+import { Suspense, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useLocation, useNavigate, useRoutes } from "react-router";
-
 import routes from "~react-pages";
+import pagesName from "./pageName";
 import "./App.css";
+
 const App = () => {
     const location = useLocation();
     const pathname = location.pathname;
     const navigate = useNavigate();
+    const [pageName, setPageName] = useState("");
+
+    useEffect(() => {
+        pagesName.forEach((i) => {
+            console.log(pathname.substring(1, 4), i.path);
+
+            if (pathname.substring(1, 4) === i.path) {
+                setPageName(i.name);
+            }
+        });
+    }, [pathname]);
 
     const iscd =
         pathname === "/" ? (
@@ -31,7 +43,9 @@ const App = () => {
             {pathname === "/" ? (
                 <h3>100 days</h3>
             ) : (
-                <h3>{Number(pathname.substring(1, 4))} day</h3>
+                <h3>
+                    {Number(pathname.substring(1, 4))} day : {pageName}
+                </h3>
             )}
         </div>
     );
