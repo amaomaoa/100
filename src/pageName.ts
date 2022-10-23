@@ -9,5 +9,9 @@ const pagesName: Path[] = [
         name: "snake",
         path: "002",
     },
+    {
+        name: "drawAgain",
+        path: "003",
+    },
 ];
 export default pagesName;

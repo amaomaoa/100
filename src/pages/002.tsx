@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import "./index.css";
 
 const Component = () => {
     interface Point {
