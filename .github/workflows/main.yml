@@ -1,0 +1,30 @@
+name: deploy-100
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    
+    steps: 
+      - uses: actions/checkout@v2
+      - name: instakll nodejs
+        uses: actions/setup-node@v2.5.1
+        with: 
+          node-version: "14.X"
+      - name: install deps
+        run: npm install
+      - name: build app
+        run: npm run build
+      - name: copy dist file with scp
+        uses: appleboy/scp-action@v0.0.1
+        with: 
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.USERNAME }}
+          proxy_key: ${{secrets.SSH_KEY }}
+          port: 22
+          source: "dist/"
+          target: ${{secrets.TARGET }}
+
