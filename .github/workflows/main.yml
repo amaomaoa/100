@@ -23,7 +23,7 @@ jobs:
               with:
                   host: ${{ secrets.HOST }}
                   username: ${{ secrets.USERNAME }}
-                  proxy_key: ${{secrets.SSH_KEY }}
+                  key: ${{secrets.SSH_KEY }}
                   port: 22
                   source: "dist/"
                   target: ${{secrets.TARGET }}
