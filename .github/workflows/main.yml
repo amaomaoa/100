@@ -6,7 +6,7 @@ on:
 
 jobs:
     build:
-        runs-on: ubuntu-18.04
+        runs-on: ubuntu-latest
 
         steps:
             - uses: actions/checkout@v2
@@ -19,7 +19,7 @@ jobs:
             - name: build app
               run: npm run build
             - name: copy dist file with scp
-              uses: appleboy/scp-action@v0.0.1
+              uses: appleboy/scp-action@master
               with:
                   host: ${{ secrets.HOST }}
                   username: ${{ secrets.USERNAME }}
