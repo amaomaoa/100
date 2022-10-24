@@ -1,4 +1,5 @@
 import { Path } from "./types";
+import "./index.css";
 
 const pagesName: Path[] = [
     {
@@ -12,6 +13,10 @@ const pagesName: Path[] = [
     {
         name: "drawAgain",
         path: "003",
+    },
+    {
+        name: "xiaxue",
+        path: "004",
     },
 ];
 export default pagesName;

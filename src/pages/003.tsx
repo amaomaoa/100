@@ -1,5 +1,4 @@
 import { MouseEvent, useRef } from "react";
-import { json } from "react-router";
 import "./003.css";
 
 const Component = () => {

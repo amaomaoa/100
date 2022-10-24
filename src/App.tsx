@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useLayoutEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate, useRoutes } from "react-router";
 import routes from "~react-pages";
 import pagesName from "./pageName";
