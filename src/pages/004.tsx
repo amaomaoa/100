@@ -29,7 +29,7 @@ const Component = () => {
                     points.forEach((p) => {
                         p.y = p.y > 600 ? 0 : p.y + p.step;
                         ctx.rect(p.x, p.y, 3, 3);
-                        ctx.fillStyle = "#fff";
+                        ctx.fillStyle = "#88888825";
                     });
                     ctx.fill();
                     ctx.closePath();
