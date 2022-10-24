@@ -20,7 +20,6 @@ const Component = () => {
                     step: Math.random() * 3 + 3,
                 };
             });
-            const draw = (p: Point) => {};
 
             const drawing = () => {
                 requestAnimationFrame(() => {
@@ -29,7 +28,7 @@ const Component = () => {
                     points.forEach((p) => {
                         p.y = p.y > 600 ? 0 : p.y + p.step;
                         ctx.rect(p.x, p.y, 3, 3);
-                        ctx.fillStyle = "#88888825";
+                        ctx.fillStyle = "#fff";
                     });
                     ctx.fill();
                     ctx.closePath();
@@ -41,7 +40,12 @@ const Component = () => {
     }, [canvasRef]);
     return (
         <>
-            <canvas ref={canvasRef} width={600} height={600} />
+            <canvas
+                ref={canvasRef}
+                style={{ background: "#000" }}
+                width={600}
+                height={600}
+            />
         </>
     );
 };
