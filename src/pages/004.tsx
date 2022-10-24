@@ -20,23 +20,19 @@ const Component = () => {
                     step: Math.random() * 3 + 3,
                 };
             });
-            const draw = (p: Point) => {
-                ctx.beginPath();
-                ctx.rect(p.x, p.y, 3, 3);
-                if (p.y < 600) {
-                    p.y = p.y + p.step;
-                }
-                ctx.fillStyle = "#fff";
-                ctx.fill();
-                ctx.closePath();
-            };
+            const draw = (p: Point) => {};
 
             const drawing = () => {
                 requestAnimationFrame(() => {
                     ctx.clearRect(0, 0, 600, 600);
+                    ctx.beginPath();
                     points.forEach((p) => {
-                        draw(p);
+                        p.y = p.y > 600 ? 0 : p.y + p.step;
+                        ctx.rect(p.x, p.y, 3, 3);
+                        ctx.fillStyle = "#fff";
                     });
+                    ctx.fill();
+                    ctx.closePath();
                     drawing();
                 });
             };
