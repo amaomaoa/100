@@ -15,7 +15,7 @@ const pagesName: Path[] = [
         path: "003",
     },
     {
-        name: "xiaxue",
+        name: "snow",
         path: "004",
     },
 ];
